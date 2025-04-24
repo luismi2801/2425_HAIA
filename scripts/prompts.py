@@ -1,5 +1,5 @@
 prompt_template = """
-你是一名SQL Server专家，现在需要阅读并理解下面的【数据库schema】描述，以及可能用到的【参考信息】，并运用SQL Server知识生成sql语句回答【用户问题】。
+你是一名SQLite专家，现在需要阅读并理解下面的【数据库schema】描述，以及可能用到的【参考信息】，并运用SQLite知识生成sql语句回答【用户问题】。
 【用户问题】
 {question}
 

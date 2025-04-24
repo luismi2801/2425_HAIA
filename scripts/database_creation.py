@@ -8,71 +8,71 @@ import time
 conn = sqlite3.connect('f1_database.db')
 cursor = conn.cursor()
 
-# cursor.execute('''
-# CREATE TABLE Piloto (
-#     id TEXT PRIMARY KEY,
-#     nombre TEXT,
-#     apellido TEXT,
-#     fecha_nacimiento TEXT,
-#     nacionalidad TEXT
-# );
+cursor.execute('''
+CREATE TABLE Piloto (
+    id TEXT PRIMARY KEY,
+    nombre TEXT,
+    apellido TEXT,
+    fecha_nacimiento TEXT,
+    nacionalidad TEXT
+);
 
-# ''')
+''')
 
-# cursor.execute('''
-# CREATE TABLE Escuderia (
-#     id TEXT PRIMARY KEY,
-#     nombre TEXT,
-#     nacionalidad TEXT
-# );
-# ''')
+cursor.execute('''
+CREATE TABLE Escuderia (
+    id TEXT PRIMARY KEY,
+    nombre TEXT,
+    nacionalidad TEXT
+);
+''')
 
-# cursor.execute('''
-# CREATE TABLE PilotoEscuderia (
-#     piloto_id TEXT,
-#     escuderia_id TEXT,
-#     PRIMARY KEY (piloto_id, escuderia_id),
-#     FOREIGN KEY (piloto_id) REFERENCES Piloto(id),
-#     FOREIGN KEY (escuderia_id) REFERENCES Escuderia(id)
-# );
-# ''')
+cursor.execute('''
+CREATE TABLE PilotoEscuderia (
+    piloto_id TEXT,
+    escuderia_id TEXT,
+    PRIMARY KEY (piloto_id, escuderia_id),
+    FOREIGN KEY (piloto_id) REFERENCES Piloto(id),
+    FOREIGN KEY (escuderia_id) REFERENCES Escuderia(id)
+);
+''')
 
-# cursor.execute('''
-# CREATE TABLE GP (
-#     id TEXT PRIMARY KEY,
-#     año INTEGER,
-#     dia INTEGER,
-#     mes INTEGER,
-#     hora TEXT,
-#     circuito TEXT,
-#     granpremio TEXT
-# );
-# ''')
+cursor.execute('''
+CREATE TABLE GP (
+    id TEXT PRIMARY KEY,
+    año INTEGER,
+    dia INTEGER,
+    mes INTEGER,
+    hora TEXT,
+    circuito TEXT,
+    granpremio TEXT
+);
+''')
 
 
-# cursor.execute('''
-# CREATE TABLE ResultadoGP (
-# gp_id TEXT,
-# piloto_id TEXT,
-# escuderia_id TEXT,
-# posicion INTEGER,
-# parrilla INTEGER,
-# tiempo TEXT,
-# puntos FLOAT,
-# PRIMARY KEY (gp_id, piloto_id),
-# FOREIGN KEY (gp_id) REFERENCES GP(id),
-# FOREIGN KEY (piloto_id) REFERENCES Piloto(id)
-# );
-# ''')
+cursor.execute('''
+CREATE TABLE ResultadoGP (
+gp_id TEXT,
+piloto_id TEXT,
+escuderia_id TEXT,
+posicion INTEGER,
+parrilla INTEGER,
+tiempo TEXT,
+puntos FLOAT,
+PRIMARY KEY (gp_id, piloto_id),
+FOREIGN KEY (gp_id) REFERENCES GP(id),
+FOREIGN KEY (piloto_id) REFERENCES Piloto(id)
+);
+''')
 
-# cursor.execute('''
-# CREATE TABLE Circuito (
-#     id TEXT PRIMARY KEY,
-#     nombre TEXT,
-#     ciudad TEXT,
-#     pais TEXT
-# );
-# ''')
+cursor.execute('''
+CREATE TABLE Circuito (
+    id TEXT PRIMARY KEY,
+    nombre TEXT,
+    ciudad TEXT,
+    pais TEXT
+);
+''')
 
 drivers = {}
 teams = {}

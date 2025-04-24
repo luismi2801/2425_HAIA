@@ -14,7 +14,7 @@ class Pipeline:
 
     def generate_sql(self, question):
         sql = self.text2sql_service.generate_sql(question)
-        sql = sql.encode('utf-8').decode('unicode_escape')
+        # sql = sql.encode('utf-8').decode('unicode_escape')
         return sql
 
     def execute_query(self, sql_query):
