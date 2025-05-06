@@ -19,6 +19,8 @@ class Pipeline:
 
     def execute_query(self, sql_query):
         answer = self.db_service.execute_query(sql_query)
+        print("Answer:")
+        print(answer)
         return answer
 
     def invoke(self, question):

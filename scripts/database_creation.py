@@ -79,7 +79,7 @@ teams = {}
 races = {}
 
 # Loop through the years from 1950 to 2024
-for year in tqdm(range(2017, 2022)):
+for year in tqdm(range(1950, 2022)):
     
     for race in range(1, 25):
         try:
